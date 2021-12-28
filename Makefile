@@ -16,10 +16,10 @@ OBJECTS = $(SOURCES:.c=.o)
 $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^ 
 
-.PHONY: clean
+.PHONY: clean fclean
+
 clean:
 	@rm $(OBJECTS)
 
-.PHONY: fclean
-fclean:
-	@rm $(TARGET) $(OBJECTS)
+fclean: clean
+	@rm $(TARGET) 
